@@ -1,0 +1,59 @@
+1. **Installation**: Download and install GitHub Desktop from [the official website](https://desktop.github.com/).
+2. **Configuration**: Set your global username and email in GitHub Desktop's preferences.
+
+3. **Initialization:**
+    - Create a new repository named `GitAdventure`.
+	File > Create new repository
+    - Find and open the repository folder on your computer.
+	Right-Click and open in VS CODE
+	
+	
+4. **Staging and Committing:**
+    - Inside `GitAdventure`, create `journey.txt`. Write: "Starting my Git journey."
+	on my local directory, created a text file called journey.txt with copy. 
+	
+    - Stage `journey.txt`.
+	In Github DT, i seleted the text file
+    - Commit your changes.
+	Added title/summary and clicked Commit
+	
+5. **Deletion:**
+    - Create `temp.txt` with the content: "This file is meant to be deleted." Then, stage and commit.
+    - Delete `temp.txt` from the folder. Commit the deletion in GitHub Desktop.
+	
+	
+6. **Renaming:**
+    - Rename `journey.txt` to `adventure.txt`.
+	- ON my local folder, renamed journey.txt to adventure.txt and add its content to: "`My journey evolves into an adventure with Git.`".
+	
+	
+    - Update its content to: "My journey evolves into an adventure with Git."
+	
+
+    - Stage and commit your changes.
+	
+	- GitHub Desktop will recognize the rename and content change. Stage and commit the changes with the message "`Rename journey.txt to adventure.txt and update `".
+	
+7. **Ignoring Files:**
+
+https://docs.github.com/en/get-started/git-basics/ignoring-files
+
+    - Create a `.gitignore` file to ignore all files ending with `.log`. Stage and commit.
+    - Test by creating a `test.log` file and check if it's ignored in GitHub Desktop.
+	
+	
+	
+8. **Diving Deeper:**
+    - Change `adventure.txt` to add "Exploring the depths of Git commands and their powers."
+    - View changes in GitHub Desktop.
+    - Stage and commit your changes.
+	
+	
+9. **History and Restoration**:
+    - Browse your repository's commit history in GitHub Desktop to see your progress.
+	
+	Go to GitAdventures and select History tab 
+	
+    - Try to revert `adventure.txt` to an earlier state. Hint: GitHub Desktop does not offer direct revert based on commit ID.
+	
+	Won't allow
