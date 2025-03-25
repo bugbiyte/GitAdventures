@@ -1,0 +1,33 @@
+1. **Installation**: Download and install GitHub Desktop from [the official website](https://desktop.github.com/).
+2. **Configuration**: Set your global username and email in GitHub Desktop's preferences.
+
+3. **Initialization:**
+    - Create a new repository named `GitAdventure`.
+	File > Create new repository
+    - Find and open the repository folder on your computer.
+	Right-Click and open in VS CODE
+	
+	
+4. **Staging and Committing:**
+    - Inside `GitAdventure`, create `journey.txt`. Write: "Starting my Git journey."
+	
+	
+    - Stage `journey.txt`.
+    - Commit your changes.
+5. **Deletion:**
+    - Create `temp.txt` with the content: "This file is meant to be deleted." Then, stage and commit.
+    - Delete `temp.txt` from the folder. Commit the deletion in GitHub Desktop.
+6. **Renaming:**
+    - Rename `journey.txt` to `adventure.txt`.
+    - Update its content to: "My journey evolves into an adventure with Git."
+    - Stage and commit your changes.
+7. **Ignoring Files:**
+    - Create a `.gitignore` file to ignore all files ending with `.log`. Stage and commit.
+    - Test by creating a `test.log` file and check if it's ignored in GitHub Desktop.
+8. **Diving Deeper:**
+    - Change `adventure.txt` to add "Exploring the depths of Git commands and their powers."
+    - View changes in GitHub Desktop.
+    - Stage and commit your changes.
+9. **History and Restoration**:
+    - Browse your repository's commit history in GitHub Desktop to see your progress.
+    - Try to revert `adventure.txt` to an earlier state. Hint: GitHub Desktop does not offer direct revert based on commit ID.
