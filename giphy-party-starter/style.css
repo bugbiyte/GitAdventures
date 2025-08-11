@@ -1,0 +1,82 @@
+/* Your Styles Here */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #0e0d0d;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif, sans-serif;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #f3f4ef;
+    font-size: 2.5em;
+
+}
+
+
+/* Form Layout */
+
+#search-form {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+#search-input {
+    flex: 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+#search-button,
+#clear-button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#search-button {
+    background-color: #28a745;
+    color: white;
+}
+
+#clear-button {
+    background-color: #dc3545;
+    color: white;
+}
+
+/* GIF gallery grid */
+#gif-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 12px;
+  max-width: 1000px;
+  margin: 0 auto;
+  align-content: space-evenly;
+}
+
+/* Each GIF frame */
+#gif-container figure {
+  margin: 0;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+/* Images inside */
+#gif-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
