@@ -1,0 +1,27 @@
+{
+  "name": "solution",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+"scripts": {
+  "test": "jest --runInBand --verbose"
+  },
+"jest": {
+    "testEnvironment": "node"
+  },
+
+  
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.3",
+    "morgan": "^1.9.0",
+    "supertest": "^3.4.2"
+  },
+  "devDependencies": {
+    "jest": "^30.2.0"
+  }
+
+}
+
