@@ -1,0 +1,25 @@
+<%- include('partials/header', { title: 'Log In' }) %>
+
+<h2>Log In</h2>
+
+<% if (error) { %>
+  <p class="error"><%= error %></p>
+<% } %>
+
+<form action="/login" method="post" novalidate>
+  <div>
+    <label for="email">Email</label>
+    <input id="email" type="email" name="email" required>
+  </div>
+
+  <div>
+    <label for="password">Password</label>
+    <input id="password" type="password" name="password" required>
+  </div>
+
+  <button type="submit">Log in</button>
+</form>
+
+<p>Don’t have an account? <a href="/signup">Create one</a></p>
+
+<%- include('partials/footer') %>
