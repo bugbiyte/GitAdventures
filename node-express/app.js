@@ -3,21 +3,38 @@ const path = require('path');
 const express = require('express');
 const app = express();
 
-// static + views (EJS)
+// ---- Parsers & logging should come FIRST ----
+app.use(express.json());                              // ✅ parse JSON (Postman raw → JSON)
+app.use(express.urlencoded({ extended: false }));     // ✅ parse HTML form posts
+app.use((req, res, next) => {                         // ✅ simple request logger
+  console.log(`[REQ] ${req.method} ${req.originalUrl}`);
+  next();
+});
+
+// ---- Static & views ----
 app.use(express.static(path.join(__dirname, 'public')));
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
+// ---- Debug routes (safe to keep while testing) ----
+app.get('/ping', (req, res) => res.status(200).send('pong'));
+app.post('/test', (req, res) => {
+  console.log('[BODY]', req.body);
+  res.status(201).json({ ok: true });
+});
+
+// ---- Your pages ----
 app.get('/smoothies', (req, res) => res.render('smoothies'));
-
-// parse form bodies (needed for /login /signup POSTs later)
-app.use(express.urlencoded({ extended: false }));
-
-// ✅ Home page now renders EJS
 app.get('/', (req, res) => res.render('home'));
 
-// ✅ mount auth routes (/signup, /login)
+// ---- Mount real routers AFTER parsers ----
 const authRoutes = require('./routes/authRoutes');
+// If authRoutes defines router.post('/signup') etc,
+// this mounts them at exactly /signup, /login, etc.
+// If you want a prefix, do: app.use('/api/auth', authRoutes)
 app.use(authRoutes);
+
+// (Optional) 404 handler to see mistyped paths
+app.use((req, res) => res.status(404).send('Not found'));
 
 module.exports = app;

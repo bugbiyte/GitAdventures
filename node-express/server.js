@@ -1,6 +1,8 @@
 // server.js
-require('dotenv').config();
 
+
+
+require('dotenv').config();
 const mongoose = require('mongoose');
 const app = require('./app');
 
@@ -9,6 +11,9 @@ const MONGO_URI = process.env.MONGO_URI; // set this in .env
 
 // (Optional) quick sanity check — remove after it prints true once
 console.log('ENV MONGO_URI loaded?', Boolean(MONGO_URI));
+
+
+
 
 mongoose.connect(MONGO_URI)
   .then(() => {
