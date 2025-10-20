@@ -3,7 +3,7 @@ const express = require('express');
 
 const router = express.Router();
 
-const items = require('./fakeDb');        // or '../fakeDb' depending on location
+const items = require('../fakeDb');        // or '../fakeDb' depending on location
 
 
 /** GET / => [item, ...] */
