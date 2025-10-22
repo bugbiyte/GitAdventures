@@ -1,25 +1,30 @@
-<%- include('partials/header', { title: 'Log In' }) %>
+<%- include('partials/header', { title: 'Sign Up' }) %>
 
-<h2>Log In</h2>
-
-<% if (error) { %>
-  <p class="error"><%= error %></p>
-<% } %>
-
-<form action="/login" method="post" novalidate>
-  <div>
-    <label for="email">Email</label>
-    <input id="email" type="email" name="email" required>
-  </div>
-
-  <div>
-    <label for="password">Password</label>
-    <input id="password" type="password" name="password" required>
-  </div>
-
-  <button type="submit">Log in</button>
+<form>
+  <h2>Login</h2>
+  <label for ="email">Email:</label>
+  <input type="text" id="email" name="email" required>
+  <div class="email error"></div>
+  <label for ="password">Password:</label>
+  <input type="password" id="password" name="password" required>
+  <div class="password error"></div>
+  <button type="submit">Login</button>
 </form>
 
-<p>Don’t have an account? <a href="/signup">Create one</a></p>
+
+<script>
+  const form = document.querySelector('form');
+  
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    //get the values
+    const email = form.email.value;
+    const password = form.password.value;
+
+   console.log({ email, password });
+   });
+</script>
+
 
 <%- include('partials/footer') %>

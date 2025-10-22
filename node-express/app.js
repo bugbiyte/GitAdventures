@@ -24,7 +24,7 @@ app.post('/test', (req, res) => {
 });
 
 // ---- Your pages ----
-app.get('/smoothies', (req, res) => res.render('smoothies'));
+app.get('/madlibs', (req, res) => res.render('madlibs'));
 app.get('/', (req, res) => res.render('home'));
 
 // ---- Mount real routers AFTER parsers ----
@@ -36,5 +36,18 @@ app.use(authRoutes);
 
 // (Optional) 404 handler to see mistyped paths
 app.use((req, res) => res.status(404).send('Not found'));
+
+
+//cookies
+app.get('/set-cookies', (req, res) => {
+  
+    res.setHeader('Set-Cookie', 'newUser=true');    
+  res.send('you got the cookies!');
+
+
+
+});app.get('/read-cookies', (req, res) => {
+
+});
 
 module.exports = app;

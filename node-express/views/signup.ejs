@@ -1,26 +1,19 @@
 <%- include('partials/header', { title: 'Sign Up' }) %>
 
-<h2>Sign Up</h2>
+<form method="post" action="/signup" autocomplete="off">
+  <h2>Create an account</h2>
 
-<% if (typeof error !== 'undefined' && error) { %>
-  <p class="error"><%= error %></p>
-<% } %>
+  <label for="email">Email:</label>
+  <input type="email" id="email" name="email" required autocomplete="email">
 
-<form action="/signup" method="post" novalidate>
-  <div>
-    <label for="email">Email</label>
-    <input id="email" type="email" name="email"
-           value="<%= (typeof form !== 'undefined' && form.email) ? form.email : '' %>" required>
-  </div>
+  <div class="email error"></div>
 
-  <div>
-    <label for="password">Password</label>
-    <input id="password" type="password" name="password" minlength="8" required>
-  </div>
+  <label for="password">Password:</label>
+  <input type="password" id="password" name="password" required autocomplete="new-password">
 
-  <button type="submit">Create account</button>
+  <div class="password error"></div>
+
+  <button type="submit">Sign Up</button>
 </form>
-
-<p>Already have an account? <a href="/login">Log in</a></p>
 
 <%- include('partials/footer') %>

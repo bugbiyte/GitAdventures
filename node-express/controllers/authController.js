@@ -1,43 +1,43 @@
+// controllers/authController.js
 const User = require('../models/User');
 
-//handle errors
+// handle errors
 const handleErrors = (err) => {
-    console.log(err.message, err.code);
-let errors = { email: '', password: '' };
-    }
-//validation errors
-if (err.message.includes('user validation failed')) {
+  console.log(err.message, err.code);
+  let errors = { email: '', password: '' };
+
+  // validation errors
+  if (err.message && err.message.toLowerCase().includes('user validation failed')) {
     Object.values(err.errors).forEach(({ properties }) => {
-        errors[properties.path] = properties.message;
+      errors[properties.path] = properties.message;
     });
-        console.log('validation error');
-}
+    console.log('validation error');
+  }
 
+  return errors;
+};
 
-module.exports. signup_get = (req, res) => {
-    res.render('signup');
-    };
+const signup_get = (req, res) => {
+  res.render('signup', { title: 'Sign up' });
+};
 
-    module.exports. login_get = (req, res) => {
-    res.render('login');
-    };
+const login_get = (req, res) => {
+  res.render('login', { title: 'Login' });
+};
 
-    module.exports. signup_post = async (req, res) => {
-const { email, password } = req.body;
-try {
-User.create({ email, password });
-res.status(201).json({ user: user._id });
-
-    }
-
-catch (err) {
+const signup_post = async (req, res) => {
+  try {
+    const { email, password } = req.body;
+    const user = await User.create({ email, password });
+    return res.status(201).json({ user: user._id });
+  } catch (err) {
     const errors = handleErrors(err);
-    console.log(err);
-    res.status(400).json({ errors });
+    return res.status(400).json({ errors });
+  }
+};
 
-}
-    }
+const login_post = (req, res) => {
+  res.send('user login');
+};
 
-    module.exports. login_post = (req, res) => {
-    res.send('user login');
-    };
+module.exports = { signup_get, login_get, signup_post, login_post };
